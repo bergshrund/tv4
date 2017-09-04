@@ -41,7 +41,20 @@ var ErrorCodes = {
 	WRONG_DOMAIN:10005,
 	WRONG_UID:10006,
 	WRONG_NAME:10007,
-	WRONG_PHONE:10008
+	WRONG_PHONE:10008,
+	WRONG_CONST:10009,
+	WRONG_RRTYPE:10010,
+	WRONG_TTL:10011,
+	WRONG_ZONEBASE:10012,
+	WRONG_RELATIVE:10013,
+	WRONG_FQDN:10014,
+	WRONG_MX:10015,
+	WRONG_A:10016,
+	WRONG_AAAA:10017,
+	WRONG_TXT:10018,
+	WRONG_TSIGKEY:10019,
+	WRONG_TSIGSECRET: 10020,
+	WRONG_BASE64:10021
 };
 var ErrorCodeLookup = {};
 for (var key in ErrorCodes) {
@@ -91,7 +104,20 @@ var ErrorMessagesDefault = {
 	WRONG_DOMAIN:"Must be a valid domain name",
 	WRONG_UID:"Use Latin letters, numbers and symbols . @ _",
 	WRONG_NAME:"Use the usual letters for the name",
-	WRONG_PHONE: "For example: +380.502120211"
+	WRONG_PHONE: "For example: +380.502120211",
+	WRONG_CONST: "Invalid const value",
+	WRONG_RRTYPE: "Unknown type",
+	WRONG_TTL: "Use integer value from 0 to 2147483647",
+	WRONG_ZONEBASE: "Use fqdn based on zone name",
+	WRONG_RELATIVE:"Use valid relative domain name",
+	WRONG_FQDN:"Use full qualified domain name with dot in the end",
+	WRONG_MX:"Use preference field (value 0 to 65535) followed by full qualified domain name with dot in the end",
+	WRONG_A:"Use quad-dotted notation of four decimal integers, ranging from 0 to 255 each. Example: 192.168.0.1",
+	WRONG_AAAA:"Use eight groups of four hexadecimal digits separated by colons (:)",
+	WRONG_TXT:"Each word is treated as a separate string unless one or more strings are enclosed in quotes",
+	WRONG_TSIGKEY:"Must be valid fqdn",
+	WRONG_TSIGSECRET:"Use ascii chars only",
+	WRONG_BASE64:"Wrong base64 encoding"
 };
 
 function ValidationError(code, params, dataPath, schemaPath, subErrors) {

@@ -21,3 +21,4 @@ Gruntfile.js
 /*.htm
 /try
 /doc
+*.geany

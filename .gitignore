@@ -1,6 +1,8 @@
 node_modules
 npm-debug.log
 
+*.geany
+
 /test/tmp
 /tmp
 
