@@ -33,7 +33,15 @@ var ErrorCodes = {
 	// Schema structure
 	CIRCULAR_REFERENCE: 600,
 	// Non-standard validation options
-	UNKNOWN_PROPERTY: 1000
+	UNKNOWN_PROPERTY: 1000,
+	WRONG_JSON:10001,
+	WRONG_BOOL:10002,
+	WRONG_EMAIL:10003,
+	WRONG_INTEGER:10004,
+	WRONG_DOMAIN:10005,
+	WRONG_UID:10006,
+	WRONG_NAME:10007,
+	WRONG_PHONE:10008
 };
 var ErrorCodeLookup = {};
 for (var key in ErrorCodes) {
@@ -74,7 +82,16 @@ var ErrorMessagesDefault = {
 	// Schema structure
 	CIRCULAR_REFERENCE: "Circular $refs: {urls}",
 	// Non-standard validation options
-	UNKNOWN_PROPERTY: "Unknown property (not in schema)"
+	UNKNOWN_PROPERTY: "Unknown property (not in schema)",
+	// Custom error codes
+	WRONG_JSON:"Must be a valid JSON",
+	WRONG_BOOL:"Must be a boolean",
+	WRONG_EMAIL:"Must be a valid email address",
+	WRONG_INTEGER:"Must be an integer",
+	WRONG_DOMAIN:"Must be a valid domain name",
+	WRONG_UID:"Use Latin letters, numbers and symbols . @ _",
+	WRONG_NAME:"Use the usual letters for the name",
+	WRONG_PHONE: "For example: +380.502120211"
 };
 
 function ValidationError(code, params, dataPath, schemaPath, subErrors) {

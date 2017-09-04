@@ -320,7 +320,9 @@ ValidatorContext.prototype.validateFormat = function (data, schema) {
 		return null;
 	}
 	var errorMessage = this.formatValidators[schema.format].call(null, data, schema);
-	if (typeof errorMessage === 'string' || typeof errorMessage === 'number') {
+	if (typeof errorMessage === 'number') {
+	    return this.createError(ErrorCodes[ErrorCodeLookup[errorMessage]]?errorMessage:ErrorCodes.FORMAT_CUSTOM, {message: ''}, '', '/format', null, data, schema);
+    } else if (typeof errorMessage === 'string') {
 		return this.createError(ErrorCodes.FORMAT_CUSTOM, {message: errorMessage}, '', '/format', null, data, schema);
 	} else if (errorMessage && typeof errorMessage === 'object') {
 		return this.createError(ErrorCodes.FORMAT_CUSTOM, {message: errorMessage.message || "?"}, errorMessage.dataPath || '', errorMessage.schemaPath || "/format", null, data, schema);
