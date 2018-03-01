@@ -54,7 +54,12 @@ var ErrorCodes = {
 	WRONG_TXT:10018,
 	WRONG_TSIGKEY:10019,
 	WRONG_TSIGSECRET: 10020,
-	WRONG_BASE64:10021
+	WRONG_BASE64:10021,
+	WRONG_YEAR:10022,
+	WRONG_MONTH:10023,
+	WRONG_CVV_TYPE:10024,
+	WRONG_CVV_LENGTH:10025,
+	WRONG_CREDITCARD:10028
 };
 var ErrorCodeLookup = {};
 for (var key in ErrorCodes) {
@@ -117,7 +122,12 @@ var ErrorMessagesDefault = {
 	WRONG_TXT:"Each word is treated as a separate string unless one or more strings are enclosed in quotes",
 	WRONG_TSIGKEY:"Must be valid fqdn",
 	WRONG_TSIGSECRET:"Use ascii chars only",
-	WRONG_BASE64:"Wrong base64 encoding"
+	WRONG_BASE64:"Wrong base64 encoding",
+	WRONG_YEAR:"Use two-digit year format",
+	WRONG_MONTH:"Use two-digit month format",
+	WRONG_CVV_TYPE:"CVC code should include digits only",
+	WRONG_CVV_LENGTH:"CVC code should be 3 digits long",
+	WRONG_CREDITCARD:"Use digits and spaces only"
 };
 
 function ValidationError(code, params, dataPath, schemaPath, subErrors) {
