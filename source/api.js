@@ -55,10 +55,10 @@ var ErrorCodes = {
 	WRONG_TSIGKEY:10019,
 	WRONG_TSIGSECRET: 10020,
 	WRONG_BASE64:10021,
-	WRONG_YEAR:10022,
+	WRONG_YEAR:10022,	
 	WRONG_MONTH:10023,
 	WRONG_CVV_TYPE:10024,
-	WRONG_CVV_LENGTH:10025,
+	WRONG_YEAR_VALUE:10025,
 	WRONG_CREDITCARD:10028
 };
 var ErrorCodeLookup = {};
@@ -124,9 +124,9 @@ var ErrorMessagesDefault = {
 	WRONG_TSIGSECRET:"Use ascii chars only",
 	WRONG_BASE64:"Wrong base64 encoding",
 	WRONG_YEAR:"Use two-digit year format",
-	WRONG_MONTH:"Use two-digit month format",
-	WRONG_CVV_TYPE:"CVC code should include digits only",
-	WRONG_CVV_LENGTH:"CVC code should be 3 digits long",
+	WRONG_MONTH:"Use two-digit month format",	
+	WRONG_CVV_TYPE:"Should be 3 digits long",
+	WRONG_YEAR_VALUE:"This year in the past",	
 	WRONG_CREDITCARD:"Use digits and spaces only"
 };
 
