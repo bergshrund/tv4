@@ -1,6 +1,6 @@
 {
   "name": "@bergshrund/tv4",
-  "version": "1.2.12",
+  "version": "1.2.18",
   "author": "Geraint Luff",
   "description": "A public domain JSON Schema validator for JavaScript",
   "keywords": [

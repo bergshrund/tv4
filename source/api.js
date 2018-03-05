@@ -59,7 +59,11 @@ var ErrorCodes = {
 	WRONG_MONTH:10023,
 	WRONG_CVV_TYPE:10024,
 	WRONG_YEAR_VALUE:10025,
-	WRONG_CREDITCARD:10028
+	WRONG_CREDITCARD:10028,
+	WRONG_CREDITCARD_LENGTH:10029,
+	WRONG_CVV_LENGTH:10030,
+	WRONG_HOLDERNAME_LENGTH:10031,
+	WRONG_HOLDERNAME_FORMAT:10032	
 };
 var ErrorCodeLookup = {};
 for (var key in ErrorCodes) {
@@ -127,7 +131,11 @@ var ErrorMessagesDefault = {
 	WRONG_MONTH:"Use two-digit month format",	
 	WRONG_CVV_TYPE:"Should be 3 digits long",
 	WRONG_YEAR_VALUE:"This year in the past",	
-	WRONG_CREDITCARD:"Use digits and spaces only"
+	WRONG_CREDITCARD:"Use digits and spaces only",
+	WRONG_CREDITCARD_LENGTH:"Should be 16 digits long",
+	WRONG_CVV_LENGTH:"CVV code is required",
+	WRONG_HOLDERNAME_LENGTH:"Holder name is required",	
+	WRONG_HOLDERNAME_FORMAT:"Enter the name of the holder from the credit card"
 };
 
 function ValidationError(code, params, dataPath, schemaPath, subErrors) {
