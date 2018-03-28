@@ -63,7 +63,8 @@ var ErrorCodes = {
 	WRONG_CREDITCARD_LENGTH:10029,
 	WRONG_CVV_LENGTH:10030,
 	WRONG_HOLDERNAME_LENGTH:10031,
-	WRONG_HOLDERNAME_FORMAT:10032	
+	WRONG_HOLDERNAME_FORMAT:10032,
+	WRONG_CREDITCARD_NUMBER:10033	
 };
 var ErrorCodeLookup = {};
 for (var key in ErrorCodes) {
@@ -113,7 +114,7 @@ var ErrorMessagesDefault = {
 	WRONG_DOMAIN:"Must be a valid domain name",
 	WRONG_UID:"Use Latin letters, numbers and symbols . @ _",
 	WRONG_NAME:"Use the usual letters for the name",
-	WRONG_PHONE: "For example: +380.502120211",
+	WRONG_PHONE: "Enter plus, then country code prefix, then dot, then digits without spaces. For example: +380.502120211",
 	WRONG_CONST: "Invalid const value",
 	WRONG_RRTYPE: "Unknown type",
 	WRONG_TTL: "Use integer value from 0 to 2147483647",
@@ -135,7 +136,8 @@ var ErrorMessagesDefault = {
 	WRONG_CREDITCARD_LENGTH:"Should be 16 digits long",
 	WRONG_CVV_LENGTH:"CVV code is required",
 	WRONG_HOLDERNAME_LENGTH:"Holder name is required",	
-	WRONG_HOLDERNAME_FORMAT:"Enter the name of the holder from the credit card"
+	WRONG_HOLDERNAME_FORMAT:"Enter the name of the holder from the credit card",
+	WRONG_CREDITCARD_NUMBER:"Use real Credit card number (not collection of random digits)"	
 };
 
 function ValidationError(code, params, dataPath, schemaPath, subErrors) {
