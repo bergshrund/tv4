@@ -64,7 +64,12 @@ var ErrorCodes = {
 	WRONG_CVV_LENGTH:10030,
 	WRONG_HOLDERNAME_LENGTH:10031,
 	WRONG_HOLDERNAME_FORMAT:10032,
-	WRONG_CREDITCARD_NUMBER:10033	
+	WRONG_CREDITCARD_NUMBER:10033,
+	WRONG_CC_LENGTH:10034,
+	WRONG_2ALPHA_CC:10035,
+	WRONG_3ALPHA_CC:10036,
+	WRONG_POSITIVE_NUMBER:10037,
+	WRONG_CURRENCY_VALUE:10038
 };
 var ErrorCodeLookup = {};
 for (var key in ErrorCodes) {
@@ -91,7 +96,7 @@ var ErrorMessagesDefault = {
 	// Object errors
 	OBJECT_PROPERTIES_MINIMUM: "Too few properties defined ({propertyCount}), minimum {minimum}",
 	OBJECT_PROPERTIES_MAXIMUM: "Too many properties defined ({propertyCount}), maximum {maximum}",
-	OBJECT_REQUIRED: "Missing required property: {key}",
+	OBJECT_REQUIRED: "Field is required",
 	OBJECT_ADDITIONAL_PROPERTIES: "Additional properties not allowed",
 	OBJECT_DEPENDENCY_KEY: "Dependency failed - key must exist: {missing} (due to key: {key})",
 	// Array errors
@@ -137,7 +142,12 @@ var ErrorMessagesDefault = {
 	WRONG_CVV_LENGTH:"CVV code is required",
 	WRONG_HOLDERNAME_LENGTH:"Holder name is required",	
 	WRONG_HOLDERNAME_FORMAT:"Enter the name of the holder from the credit card",
-	WRONG_CREDITCARD_NUMBER:"Use real Credit card number (not collection of random digits)"	
+	WRONG_CREDITCARD_NUMBER:"Use real Credit card number (not collection of random digits)",
+	WRONG_CC_LENGTH:"Country code is required",
+	WRONG_2ALPHA_CC:"Wrong Alpha 2 country code",
+	WRONG_3ALPHA_CC:"Wrong Alpha 3 country code",
+	WRONG_POSITIVE_NUMBER:"Should be a positive number",
+	WRONG_CURRENCY_VALUE:"Should be a correct currency"
 };
 
 function ValidationError(code, params, dataPath, schemaPath, subErrors) {
