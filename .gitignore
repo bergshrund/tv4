@@ -1,6 +1,6 @@
 node_modules
 npm-debug.log
-
+tv4.geany
 *.geany
 
 /test/tmp
